@@ -1,7 +1,7 @@
 .desktop {
   position: relative;
-  width: 100%;
-  height: 3099px;
+  width: 1440px;
+  height: 6826px;
   background-color: #000000;
   zoom: 105.5%;
 }
@@ -181,7 +181,7 @@
   position: absolute;
   width: 1440px;
   height: 365px;
-  top: 2734px;
+  top: 6461px;
   left: 0;
   background: linear-gradient(180deg, rgba(118.79, 118.79, 118.79, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
 }
@@ -532,16 +532,16 @@
   position: absolute;
   width: 919px;
   height: 40px;
-  top: 2048px;
-  left: 56px;
+  top: 5747px;
+  left: 23px;
 }
 
 .desktop .john-fornander {
   position: absolute;
   width: 280px;
   height: 340px;
-  top: 2161px;
-  left: 569px;
+  top: 5903px;
+  left: 580px;
   object-fit: cover;
 }
 
@@ -549,8 +549,8 @@
   position: absolute;
   width: 280px;
   height: 340px;
-  top: 2161px;
-  left: 961px;
+  top: 5903px;
+  left: 1040px;
   object-fit: cover;
 }
 
@@ -558,8 +558,8 @@
   position: absolute;
   width: 280px;
   height: 340px;
-  top: 2161px;
-  left: 177px;
+  top: 5903px;
+  left: 120px;
   object-fit: cover;
 }
 
@@ -567,8 +567,8 @@
   position: absolute;
   width: 200px;
   height: 40px;
-  top: 2598px;
-  left: 609px;
+  top: 6350px;
+  left: 625px;
   background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
 }
 
@@ -584,6 +584,312 @@
   letter-spacing: 0;
   line-height: normal;
 }
-a:hover{
+
+.desktop .overlap-2 {
+  position: absolute;
+  width: 1440px;
+  height: 588px;
+  top: 2059px;
+  left: 0;
+}
+
+.desktop .frame-11 {
+  position: absolute;
+  width: 1440px;
+  height: 587px;
+  top: 1px;
+  left: 0;
+  overflow: hidden;
+}
+
+.desktop .fitness-la-gi {
+  position: absolute;
+  width: 520px;
+  height: 330px;
+  top: 129px;
+  left: 459px;
+  object-fit: cover;
+}
+
+.desktop .the-bar-is-an-iron {
+  position: absolute;
+  width: 1316px;
+  top: 520px;
+  left: 61px;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .frame-12 {
+  position: absolute;
+  width: 1433px;
+  height: 451px;
+  top: 1760px;
+  left: 61px;
+  overflow: hidden;
+}
+
+.desktop .element-leg-press-machine {
+  position: absolute;
+  width: 357px;
+  top: -1px;
+  left: 13px;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .leg-press-machine {
+  position: absolute;
+  width: 400px;
+  height: 316px;
+  top: -7754px;
+  left: -5473px;
+  object-fit: cover;
+}
+
+.desktop .the-leg-trainer-is {
+  position: absolute;
+  width: 1391px;
+  top: 394px;
+  left: 0;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-20 {
+  position: absolute;
+  width: 157px;
+  top: 0;
+  left: 19px;
+  background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .overlap-3 {
+  position: absolute;
+  width: 1440px;
+  height: 588px;
+  top: 2796px;
+  left: 0;
+}
+
+.desktop .frame-13 {
+  position: absolute;
+  width: 1440px;
+  height: 587px;
+  top: 1px;
+  left: 0;
+  background-color: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.desktop .rectangle {
+  position: absolute;
+  width: 1440px;
+  height: 326px;
+  top: -6785px;
+  left: -5857px;
+}
+
+.desktop .ti-xung {
+  position: absolute;
+  width: 520px;
+  height: 330px;
+  top: 129px;
+  left: 451px;
+  object-fit: cover;
+}
+
+.desktop .text-wrapper-21 {
+  position: absolute;
+  width: 1334px;
+  top: 521px;
+  left: 61px;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-22 {
+  position: absolute;
+  width: 231px;
+  top: 0;
+  left: 19px;
+  background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .frame-14 {
+  position: absolute;
+  width: 1440px;
+  height: 587px;
+  top: 3534px;
+  left: 0;
+}
+
+.desktop .text-wrapper-23 {
+  position: absolute;
+  width: 370px;
+  top: -1px;
+  left: 19px;
+  background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .img-2 {
+  position: absolute;
+  width: 520px;
+  height: 330px;
+  top: 129px;
+  left: 436px;
+  object-fit: cover;
+}
+
+.desktop .the-leg-trainer-is-2 {
+  position: absolute;
+  width: 1103px;
+  top: 530px;
+  left: 144px;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .frame-15 {
+  position: absolute;
+  width: 1440px;
+  height: 587px;
+  top: 4271px;
+  left: 0;
+}
+
+.desktop .text-wrapper-24 {
+  position: absolute;
+  width: 245px;
+  top: -1px;
+  left: 19px;
+  background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-25 {
+  position: absolute;
+  width: 1103px;
+  top: 520px;
+  left: 168px;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .fitness-la-gi-2 {
+  position: absolute;
+  width: 520px;
+  height: 330px;
+  top: 129px;
+  left: 460px;
+  object-fit: cover;
+}
+
+.desktop .frame-16 {
+  position: absolute;
+  width: 1440px;
+  height: 587px;
+  top: 5008px;
+  left: 0;
+}
+
+.desktop .text-wrapper-26 {
+  position: absolute;
+  width: 534px;
+  top: -1px;
+  left: 19px;
+  background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-27 {
+  position: absolute;
+  width: 1139px;
+  top: 520px;
+  left: 150px;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+a:hover {
   opacity: 0.8;
 }

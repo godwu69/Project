@@ -106,16 +106,16 @@
                 <div class="text-wrapper-10">Home</div>
               </div></a
             >
-            <div class="frame-9">
-              <a href="../services/index.php"><div class="text-wrapper-11">Services</div></a>
-            </div>
-            <a href=""
+            <a href="../services/index.html"><div class="frame-9">
+              <div class="text-wrapper-11">Services</div>
+            </div></a>
+            <a href="../about/index.html"
               ><div class="frame-10">
                 <div class="text-wrapper-12">About</div>
               </div></a
             >
             <div class="frame-11">
-              <a href=""><div class="text-wrapper-13">Contacts</div></a>
+              <a href="../contact/index.html"><div class="text-wrapper-13">Contacts</div></a>
             </div>
           </div>
         </div>

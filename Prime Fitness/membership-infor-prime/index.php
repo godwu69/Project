@@ -46,8 +46,8 @@
           <a href="../memberships/index.php"><div class="div-wrapper"><div class="text-wrapper-10">Join Us</div></div></a>
           <a href="../homepage/index.php"><div class="frame-5"><div class="text-wrapper-11">Home</div></div></a>
           <a href="../services/index.php"><div class="frame-6"><div class="text-wrapper-12">Services</div></div></a>
-          <a href=""><div class="frame-7"><div class="text-wrapper-13">About</div></div></a>
-          <a href=""><div class="frame-8"><div class="text-wrapper-14">Contacts</div></div></a>
+          <a href="../about/index.html"><div class="frame-7"><div class="text-wrapper-13">About</div></div></a>
+          <a href="../contact/index.html"><div class="frame-8"><div class="text-wrapper-14">Contacts</div></div></a>
         </div>
         <img class="membership" src="img/membership-information.png" />
         <div class="frame-9">
