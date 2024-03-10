@@ -29,10 +29,9 @@ class MemberManagement
         $stmt = $this->conn->prepare("INSERT INTO services (membership, cost, member_id) VALUES (?, ?, ?)");
         $stmt->bind_param("ssi", $membership, $cost, $member_id);
         $stmt->execute();
-        $service_id = $stmt->insert_id;
 
-        $stmt = $this->conn->prepare("INSERT INTO orders (fromdate, todate, service_id) VALUES (?, ?, ?)");
-        $stmt->bind_param("ssi", $fromdate, $todate, $service_id);
+        $stmt = $this->conn->prepare("INSERT INTO orders (fromdate, todate, member_id) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $fromdate, $todate, $member_id);
         $stmt->execute();
     }
 
@@ -43,7 +42,7 @@ class MemberManagement
         $sql = "SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
                 FROM members m
                 JOIN services s on s.member_id  = m.id
-                JOIN orders o on o.service_id = s.id
+                JOIN orders o on o.member_id = m.id
                 WHERE m.hide = 'Show'
                 ORDER BY fromdate DESC";
         $result = $this->conn->query($sql);
@@ -61,7 +60,7 @@ class MemberManagement
         $sql = "SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
                 FROM members m
                 JOIN services s on s.member_id  = m.id
-                JOIN orders o on o.service_id = s.id
+                JOIN orders o on o.member_id = m.id
                 WHERE m.hide = 'Hide'
                 ORDER BY fromdate DESC";
         $result = $this->conn->query($sql);
@@ -110,7 +109,7 @@ class MemberManagement
         $sql = "SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
                 FROM members m
                 JOIN services s on s.member_id  = m.id
-                JOIN orders o on o.service_id = s.id
+                JOIN orders o on o.member_id = m.id
                 WHERE s.membership = '$membership' AND o.status = '$status' 
                 ORDER BY fromdate DESC";
         $result = $this->conn->query($sql);
@@ -129,7 +128,7 @@ class MemberManagement
         $sql = "SELECT m.name,m.email,m.phone,s.membership,o.fromdate,o.todate,o.status
                 FROM members m
                 JOIN services s on s.member_id  = m.id
-                JOIN orders o on o.service_id = s.id
+                JOIN orders o on o.member_id = m.id
                 WHERE m.email = '$email'";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {

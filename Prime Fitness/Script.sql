@@ -21,8 +21,8 @@ CREATE TABLE orders (
     fromdate DATE,
     todate DATE,
     status VARCHAR(200) DEFAULT 'Pending',
-    service_id INT,
-    FOREIGN KEY (service_id) REFERENCES services(id) ON UPDATE CASCADE ON DELETE CASCADE
+    member_id INT,
+    FOREIGN KEY (member_id) REFERENCES members(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE admin (
@@ -33,9 +33,3 @@ CREATE TABLE admin (
 
 INSERT INTO admin (id,username,password) VALUES (1,'admin','admin123')
 
-SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
-                FROM members m
-                JOIN services s on m.id  = s.member_id 
-                JOIN orders o on s.id = o.service_id 
-                WHERE m.hide = 'Show'
-                ORDER BY s.cost desc
