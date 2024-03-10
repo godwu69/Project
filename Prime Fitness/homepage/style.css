@@ -3,24 +3,24 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-  zoom: 106%;
+  width: 1440px;
+  zoom: 105.5%;
 }
 
 .desktop .div {
   background-color: #000000;
-  overflow: hidden;
   width: 1440px;
   height: 3913px;
   position: relative;
 }
 
 .desktop .overlap {
+  background-color: black;
   position: absolute;
-  width: 1442px;
+  width: 1440px;
   height: 1740px;
   top: 0;
-  left: -2px;
+  left: 0px;
 }
 
 .desktop .image {
@@ -28,7 +28,7 @@
   position: absolute;
   width: 1440px;
   height: 870px;
-  left: 2px;
+  left: 0;
   object-fit: cover;
 }
 
@@ -70,7 +70,7 @@
   position: absolute;
   width: 1440px;
   height: 870px;
-  left: 2px;
+  left: 0;
   object-fit: cover;
 }
 
@@ -1030,7 +1030,7 @@
   position: absolute;
   width: 1440px;
   height: 70px;
-  top: 294px;
+  top: 295px;
   left: 0;
   background: linear-gradient(180deg, rgb(246, 104, 68) 0%, rgb(255, 146, 27) 100%);
 }
@@ -1214,3 +1214,4 @@
 a:hover{
   opacity: 0.8;
 }
+

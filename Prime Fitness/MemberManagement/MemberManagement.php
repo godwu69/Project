@@ -18,147 +18,83 @@ class MemberManagement
         }
     }
 
-    public function addBasic($name, $email, $phone)
+    public function addMember($name,$email,$phone,$membership,$cost,$fromdate,$todate)
     {
-        $sql = "INSERT INTO basicMembers (name,email,phone) VALUES (?,?,?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssi", $name, $email, $phone);
+
+        $stmt = $this->conn->prepare("INSERT INTO members (name, email, phone) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $phone);
         $stmt->execute();
-        $stmt->close();
+        $member_id = $stmt->insert_id;
+
+        $stmt = $this->conn->prepare("INSERT INTO services (membership, cost, member_id) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $membership, $cost, $member_id);
+        $stmt->execute();
+        $service_id = $stmt->insert_id;
+
+        $stmt = $this->conn->prepare("INSERT INTO orders (fromdate, todate, service_id) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $fromdate, $todate, $service_id);
+        $stmt->execute();
     }
 
-    public function addAdvance($name, $email, $phone)
-    {
-        $sql = "INSERT INTO advanceMembers (name, email, phone) VALUES (?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssi", $name, $email, $phone);
-        $stmt->execute();
-        $stmt->close();
-    }
 
-    public function addPrime($name, $email, $phone)
+    public function getAllMembers()
     {
-        $sql = "INSERT INTO primeMembers (name, email, phone) VALUES (?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssi", $name, $email, $phone);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-    public function getAllBasicMembers()
-    {
-        $basicMembers = [];
-        $sql = "SELECT * FROM basicMembers GROUP BY name,email,phone,type,cost,fromdate,todate,status";
+        $members = [];
+        $sql = "SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
+                FROM members m
+                JOIN services s on s.member_id  = m.id
+                JOIN orders o on o.service_id = s.id
+                WHERE m.hide = 'Show'
+                ORDER BY fromdate DESC";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $basicMembers[] = $row;
+                $members[] = $row;
             }
         }
-        return $basicMembers;
+        return $members;
     }
 
-    public function getAllAdvanceMembers()
+    public function getAllHiddenMembers()
     {
-        $advanceMembers = [];
-        $sql = "SELECT * FROM advanceMembers GROUP BY name,email,phone,type,cost,fromdate,todate,status";
+        $members = [];
+        $sql = "SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
+                FROM members m
+                JOIN services s on s.member_id  = m.id
+                JOIN orders o on o.service_id = s.id
+                WHERE m.hide = 'Hide'
+                ORDER BY fromdate DESC";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $advanceMembers[] = $row;
+                $members[] = $row;
             }
         }
-        return $advanceMembers;
+        return $members;
     }
 
-    public function getAllPrimeMembers()
+    public function updateMember($id, $name, $email, $phone)
     {
-        $primeMembers = [];
-        $sql = "SELECT * FROM primeMembers GROUP BY name,email,phone,type,cost,fromdate,todate,status";
-        $result = $this->conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $primeMembers[] = $row;
-            }
-        }
-        return $primeMembers;
-    }
-
-    public function deleteBasicMember($id)
-    {
-        $sql = "DELETE FROM basicMembers WHERE id='$id'";
-        $this->conn->query($sql);
-    }
-
-    public function deleteAdvanceMember($id)
-    {
-        $sql = "DELETE FROM advanceMembers WHERE id='$id'";
-        $this->conn->query($sql);
-    }
-
-    public function deletePrimeMember($id)
-    {
-        $sql = "DELETE FROM primeMembers WHERE id='$id'";
-        $this->conn->query($sql);
-    }
-
-    public function updateBasicMember($id, $name, $email, $phone)
-    {
-        $sql = "UPDATE basicMembers SET name=?, email=?, phone=? WHERE id=?";
+        $sql = "UPDATE members SET members.name=?, members.email=?, members.phone=? WHERE members.id=?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("ssii", $name, $email, $phone, $id);
         $stmt->execute();
         $stmt->close();
     }
 
-    public function updateBasicStatus($id,$status)
+    public function updateMemberStatus($id,$status)
     {
-        $sql=  "UPDATE basicMembers SET status = ? WHERE id = ?";
+        $sql=  "UPDATE orders SET orders.status = ? WHERE orders.id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("si",$status,$id);
         $stmt->execute();
         $stmt->close();
     }
 
-    public function updateAdvanceStatus($id,$status)
-    {
-        $sql=  "UPDATE advanceMembers SET status = ? WHERE id = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("si",$status,$id);
-        $stmt->execute();
-        $stmt->close();
-    }
 
-    public function updatePrimeStatus($id,$status)
+    public function getMemberById($id)
     {
-        $sql=  "UPDATE primeMembers SET status = ? WHERE id = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("si",$status,$id);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-    public function updateAdvanceMember($id, $name, $email, $phone)
-    {
-        $sql = "UPDATE advanceMembers SET name=?, email=?, phone=? WHERE id=?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssii", $name, $email, $phone, $id);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-    public function updatePrimeMember($id, $name, $email, $phone)
-    {
-        $sql = "UPDATE primeMembers SET name=?, email=?, phone=? WHERE id=?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssii", $name, $email, $phone, $id);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-    public function getBasicMember($id)
-    {
-        $sql = "SELECT * FROM basicMembers WHERE id=?";
+        $sql = "SELECT members.name, members.email, members.phone FROM members WHERE members.id=?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -168,29 +104,62 @@ class MemberManagement
         return $row;
     }
 
-    public function getAdvanceMember($id)
+    public function searchMember($membership,$status)
     {
-        $sql = "SELECT * FROM advanceMembers WHERE id=?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        $stmt->close();
-        return $row;
+        $members = [];
+        $sql = "SELECT m.id,m.name,m.email,m.phone,s.membership,s.cost,o.fromdate,o.todate,o.status
+                FROM members m
+                JOIN services s on s.member_id  = m.id
+                JOIN orders o on o.service_id = s.id
+                WHERE s.membership = '$membership' AND o.status = '$status' 
+                ORDER BY fromdate DESC";
+        $result = $this->conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $members[] = $row;
+            }
+        }
+        return $members;
     }
 
-    public function getPrimeMember($id)
+    public function searchMemberByEmail($email)
     {
-        $sql = "SELECT * FROM primeMembers WHERE id=?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        $stmt->close();
-        return $row;
+
+        $members = [];
+        $sql = "SELECT m.name,m.email,m.phone,s.membership,o.fromdate,o.todate,o.status
+                FROM members m
+                JOIN services s on s.member_id  = m.id
+                JOIN orders o on o.service_id = s.id
+                WHERE m.email = '$email'";
+        $result = $this->conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $members[] = $row;
+            }
+        }
+        return $members;
     }
+
+    public function hideMember($id,$hide)
+    {
+        $sql = "UPDATE members SET members.hide = ? WHERE members.id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("si",$hide,$id);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    public function showMember($id,$hide)
+    {
+        $sql = "UPDATE members SET members.hide = ? WHERE members.id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("si",$hide,$id);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+
+
 
     public function __destruct()
     {

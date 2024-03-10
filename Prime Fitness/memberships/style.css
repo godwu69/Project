@@ -16,6 +16,7 @@
 .desktop .overlap {
   position: relative;
   height: 1201px;
+  width: 1440px;
   background-image: url(./img/804834-1.png);
   background-size: cover;
   background-position: 50% 50%;
@@ -667,4 +668,16 @@
 }
 a:hover{
   opacity: 0.8;
+}
+
+.search {
+  position: relative;
+  color: white;
+  top: 310px;
+  left: 270px;
+  line-height: normal;
+}
+
+.here {
+  color: #f66844;
 }

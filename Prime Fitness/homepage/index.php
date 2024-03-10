@@ -127,7 +127,7 @@
               <span class="span">25$</span>
               <span class="text-wrapper-15"> 20$</span>
             </p>
-            <a href="../membership-info-basic/index.php">
+            <a href="../membership-info/index.php">
               <div class="frame-13">
                 <div class="text-wrapper-16">Select</div>
               </div></a
@@ -144,7 +144,7 @@
         <div class="frame-15">
           <div class="text-wrapper-19">6 Months</div>
           <div class="text-wrapper-20">150$</div>
-          <a href="../menbership-info-advance/index.php"
+          <a href="../membership-info/index.php"
             ><div class="frame-16">
               <div class="text-wrapper-16">Select</div>
             </div></a
@@ -159,7 +159,7 @@
             <span class="span">300$</span>
             <span class="text-wrapper-15"> 250$</span>
           </p>
-          <a href="../membership-infor-prime/index.php"
+          <a href="../membership-info/index.php"
             ><div class="frame-16">
               <div class="text-wrapper-16">Select</div>
             </div></a

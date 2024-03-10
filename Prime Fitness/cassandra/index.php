@@ -16,7 +16,7 @@
         </div></a>
         <a href="../memberships/index.php"><div class="div-wrapper"><div class="text-wrapper-2">Join Us</div></div></a>
         <a href="../homepage/index.php"><div class="frame-2"><div class="text-wrapper-3">Home</div></div></a>
-        <a href="../services/index.php"><div class="frame-3"><div class="text-wrapper-4">Services</div></div></a>
+        <a href="../services/index.html"><div class="frame-3"><div class="text-wrapper-4">Services</div></div></a>
         <a href="../about/index.html"><div class="frame-4"><div class="text-wrapper-5">About</div></div></a>
         <a href="../contact/index.html"><div class="frame-5"><div class="text-wrapper-6">Contacts</div></div></a>
       </div>
