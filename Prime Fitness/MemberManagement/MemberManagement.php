@@ -1,5 +1,6 @@
 <?php
 
+//Connect to database
 class MemberManagement
 {
     public $conn;
@@ -17,7 +18,8 @@ class MemberManagement
             die("Connection failed: " . $this->conn->connect_error);
         }
     }
-
+    
+    //Add member
     public function addMember($name,$email,$phone,$membership,$cost,$fromdate,$todate)
     {
 
@@ -35,7 +37,7 @@ class MemberManagement
         $stmt->execute();
     }
 
-
+    //Get all member information
     public function getAllMembers()
     {
         $members = [];
@@ -54,6 +56,7 @@ class MemberManagement
         return $members;
     }
 
+    //Get all hidden member information
     public function getAllHiddenMembers()
     {
         $members = [];
@@ -72,6 +75,7 @@ class MemberManagement
         return $members;
     }
 
+    //Update member information
     public function updateMember($id, $name, $email, $phone)
     {
         $sql = "UPDATE members SET members.name=?, members.email=?, members.phone=? WHERE members.id=?";
@@ -81,6 +85,7 @@ class MemberManagement
         $stmt->close();
     }
 
+    //Update member
     public function updateMemberStatus($id,$status)
     {
         $sql=  "UPDATE orders SET orders.status = ? WHERE orders.id = ?";
@@ -90,7 +95,7 @@ class MemberManagement
         $stmt->close();
     }
 
-
+    //Get member information by ID
     public function getMemberById($id)
     {
         $sql = "SELECT members.name, members.email, members.phone FROM members WHERE members.id=?";
@@ -103,6 +108,7 @@ class MemberManagement
         return $row;
     }
 
+    //Search member information by membership & status
     public function searchMember($membership,$status)
     {
         $members = [];
@@ -121,6 +127,7 @@ class MemberManagement
         return $members;
     }
 
+    //Search member information by Email
     public function searchMemberByEmail($email)
     {
 
@@ -139,6 +146,7 @@ class MemberManagement
         return $members;
     }
 
+    //Hide member
     public function hideMember($id,$hide)
     {
         $sql = "UPDATE members SET members.hide = ? WHERE members.id = ?";
@@ -148,6 +156,7 @@ class MemberManagement
         $stmt->close();
     }
 
+    //Show hidden member
     public function showMember($id,$hide)
     {
         $sql = "UPDATE members SET members.hide = ? WHERE members.id = ?";
@@ -156,7 +165,6 @@ class MemberManagement
         $stmt->execute();
         $stmt->close();
     }
-
 
 
 

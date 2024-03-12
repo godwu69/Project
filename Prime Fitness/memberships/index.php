@@ -48,9 +48,7 @@
               discount for 1 year
             </p>
           </div>
-            <div class="search">
                 <p class="search">Already registered? click <a href="view_information.php" class="here">here</a> to find your information</p>
-            </div>
           <div class="frame-11">
             <div class="frame-12">
               <div class="text-wrapper-16">PRIME</div>

@@ -32,6 +32,7 @@ $memberManagement->addMember($name,$email,$phone,$membership,$cost,$fromdate,$to
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Member</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="add.css">
 </head>
 <body>
 <div class="container mt-5">
@@ -56,6 +57,7 @@ $memberManagement->addMember($name,$email,$phone,$membership,$cost,$fromdate,$to
         </div>
         <div class="form-group">
             <label for="membership">Membership:</label>&nbsp;
+            <br>
             <select name="membership" id="membership" required>
                 <option value="">Select</option>
                 <option value="Basic">Basic</option>
